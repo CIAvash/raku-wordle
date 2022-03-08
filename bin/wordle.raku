@@ -2,7 +2,9 @@
 
 use Games::Wordle;
 
-my Games::Wordle $wordle.=new;
+unit sub MAIN (Int $number?);
+
+my Games::Wordle $wordle.=new: |do :$number with $number;
 
 "Wordle $wordle.number()\nEnter your guess:".say;
 
